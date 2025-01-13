@@ -1,9 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
-	fmt.Println("Hello, World!")
+	bc := NewBlockChain()
+	for {
+		// TODO: get transactions from user input and constantly add to blockchain
+	}
 }

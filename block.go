@@ -4,15 +4,23 @@ import "fmt"
 
 type Block struct {
 	PreviousBlock *Block
-	Transactions []*Transaction
+	Transactions map[string]*Transaction
 	EndStateSignature string
 }
 
-func NewBlock(previousBlock *Block, transactions []*Transaction, endStateSignature string) *Block {
+func NewBlockWithEndState(previousBlock *Block, transactions map[string]*Transaction, endStateSignature string) *Block {
 	return &Block{
 		PreviousBlock: previousBlock,
 		Transactions: transactions,
 		EndStateSignature: endStateSignature,
+	}
+}
+
+func NewBlock(previousBlock *Block, transactions map[string]*Transaction) *Block {
+	return &Block{
+		PreviousBlock: previousBlock,
+		Transactions: transactions,
+		EndStateSignature: "",
 	}
 }
 

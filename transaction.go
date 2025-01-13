@@ -6,11 +6,11 @@ type Transaction struct {
 	SenderAddress string
 	RecipientAddress string
 	Amount int
-	Data any
+	Data string
 	Nonce int
 }
 
-func NewTransaction(senderAddress string, recipientAddress string, amount int, data any, nonce int) *Transaction {
+func NewTransaction(senderAddress string, recipientAddress string, amount int, data string, nonce int) *Transaction {
 	return &Transaction{
 		SenderAddress: senderAddress,
 		RecipientAddress: recipientAddress,
